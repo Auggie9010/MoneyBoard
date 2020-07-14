@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MoneyBoardV1</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header>
+    <div class="header-logo">
+      <%= link_to("MoneyBoard", "/")%>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <%= link_to("トップ", "/")%>
+      </li>
+      <li>
+        <%= link_to("費目一覧", "/accounts") %>
+      </li>
+      <li>
+        <%= link_to("レポート", "/report") %>
+      </li>
+      <li>
+        <%= link_to("チャート", "/chart") %>
+      </li>
+    </ul>
+  </header>
+
+    <%= yield %>
+  </body>
+</html>

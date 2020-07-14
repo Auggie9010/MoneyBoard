@@ -1,0 +1,76 @@
+<body>
+  <div class = "monthly-balance">
+  <h1 class="section-title">月次収支</h1>
+  <table>
+    <tr>
+      <th>当月収入</th>
+      <th></th>
+      <th>当月支出</th>
+      <th></th>
+      <th>当月収支</th>
+    </tr>
+    <tbody>
+      <tr>
+        <th>9,999,999円</th>
+        <th>-</th>
+        <th>9,999,999円</th>
+        <th>=</th>
+        <th>9,999,999円</th>
+      </tr>
+    </tbody>
+</div>
+
+<div class = "records">
+  <h1 class="section-title">収入・支出詳細</h1>
+  <table>
+    <tr>
+      <th>計算対象</th>
+      <th>日付</th>
+      <th>費目コード</th>
+      <th>費目名称</th>
+      <th>費目分類コード</th>
+      <th>費目分類名称</th>
+      <th>金額</th>
+      <th>内容</th>
+      <th>メモ</th>
+    </tr>
+    <% @details.each do |detail| %>
+    <tbody>
+      <th>
+        <%= detail.is_culculated %>
+      </th>
+      <th>
+        <%= detail.entry_date %>
+      </th>
+      <th>
+        <%= detail.item_id %>
+      </th>
+      <th>
+        <%= detail.item_name %>
+      </th>
+      <th>
+        <%= detail.item_group_id %>
+      </th>
+      <th>
+        <%= detail.p_item_name %>
+      </th>
+      <th>
+        <%= detail.price %>
+      </th>
+      <th>
+        <%= detail.content %>
+      </th>
+      <th>
+        <%= detail.memo %>
+      </th>
+    </tbody>
+    <% end %>
+  </table>
+
+</div>
+
+<div class = "data-output">
+  <h1 class="section-title">データ出力</h1>
+  <button type="button" name="button-download">ダウンロード</button>
+</div>
+</body>

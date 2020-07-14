@@ -1,0 +1,38 @@
+<body>
+  <div class = "selection-condition">
+  <h1 class="section-title">選択条件</h1>
+  <a>抽出期間</a>
+  <a>開始日</a>
+  <input type="date" name="start-date">
+  <a>終了日</a>
+  <input type="date" name="end-date">
+  <br>
+  <a>抽出階層</a>
+  <input type="number" min="1" max="9" name="hierarchy">
+  <br>
+  <button type="button" name="execute">実行</button>
+</div>
+<div class = "report">
+<h1 class="section-title">レポート画面</h1>
+<table>
+  <tr>
+    <th>費目</th>
+    <th>費目名称</th>
+    <th>実績金額</th>
+  </tr>
+  <% @entries.each do |entry| %>
+  <tbody>
+    <th>
+      <%= entry["item_id"] %>
+    </th>
+    <th>
+      <%= entry["item_name"] %>
+    </th>
+    <th>
+      <%= entry["price"] %>
+    </th>
+  </tbody>
+  <% end %>
+</table>
+</div>
+</body>
